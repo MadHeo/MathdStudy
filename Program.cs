@@ -4,41 +4,41 @@ namespace MethodPractice
 {
     //class Calculator
     //{
-        //public static int Plus (int a, int b)
-        //{
-        //    Console.WriteLine("Input : {0}, {1}", a, b);
+    //public static int Plus (int a, int b)
+    //{
+    //    Console.WriteLine("Input : {0}, {1}", a, b);
 
-        //    int result = a + b;
-        //    return result;
-        //}
+    //    int result = a + b;
+    //    return result;
+    //}
 
-        //int x = Program.Plus(3, 4);
+    //int x = Program.Plus(3, 4);
 
-        //    public static int Plus(int a, int b)
-        //    {
-        //        return a + b;
-        //    }
+    //    public static int Plus(int a, int b)
+    //    {
+    //        return a + b;
+    //    }
 
-        //    public static int Minus(int a, int b)
-        //    {
-        //        return a - b;
-        //    }
-        //}
+    //    public static int Minus(int a, int b)
+    //    {
+    //        return a - b;
+    //    }
+    //}
 
-        //class MainApp
-        //{
-        //    public static void Main()
-        //    {
-        //        int result = Calculator.Plus(3, 4);
-        //        Console.WriteLine(result);
+    //class MainApp
+    //{
+    //    public static void Main()
+    //    {
+    //        int result = Calculator.Plus(3, 4);
+    //        Console.WriteLine(result);
 
-        //        result = Calculator.Minus(5, 2);
-        //        Console.WriteLine(result);
-        //    }
-        //}
+    //        result = Calculator.Minus(5, 2);
+    //        Console.WriteLine(result);
+    //    }
+    //}
 
 
-        //Ref Return
+    //Ref Return
 
     //class Product
     //{
@@ -54,7 +54,7 @@ namespace MethodPractice
     //            Console.WriteLine($"Price :{price}");
     //        }
     //}
-       
+
 
     //class MainApp
     //{
@@ -97,36 +97,440 @@ namespace MethodPractice
     //}
 
     //가변길이 매개변수
-    class MainApp
+    //class MainApp
+    //{
+    //    static int Sum(params int[] args)
+    //    {
+    //        Console.Write("Summing...");
+
+    //        int sum = 0;
+
+    //        for(int i=0; i<args.Length; i++)
+    //        {
+    //            if (i > 0)
+    //                Console.Write(",");
+
+    //            Console.Write(args[i]);
+
+    //            sum += args[i];
+    //        }
+
+    //        Console.WriteLine();
+
+    //        return sum;
+    //    }
+
+    //    static void Main(string[] args)
+    //    {
+    //        int sum = Sum(3, 4, 5, 6, 7, 8, 9, 10);
+
+    //        Console.WriteLine($"Sum : {sum}");
+    //    }
+    //}
+
+
+    //명명된 매개 변수
+    //class MainApp
+    //{
+    //    static void PrintProfile(string name, string phone)
+    //    {
+    //        Console.WriteLine($"Name:{name}, Phone:{phone}");
+    //    }
+    //    static void Main(string[] args)
+    //    {
+    //        PrintProfile(name: "박찬호", phone: "010-123-1234");
+    //        PrintProfile(phone: "010-932-3434", name: "박지성");
+    //        PrintProfile("박세리","010-231-3453");
+    //        PrintProfile("박상현", phone: "010-3243-6734");
+    //    }
+    //}
+
+    //선택적 매개 변수
+    //class MainApp
+    //{
+    //    static void PrintProfile(string name, string phone = "")
+    //    {
+    //        Console.WriteLine($"Name:{name}, Phone : {phone}");
+    //    }
+
+    //    static void Main(string[] args)
+    //    {
+    //        PrintProfile("태연");
+    //        PrintProfile("윤아", "010-4123-4433");
+    //        PrintProfile(name : "유리");
+    //        PrintProfile(name: "서현", phone:"010-4123-4433");
+    //    }
+    //}
+
+    //로컬 함수
+    //class MainApp
+    //{
+    //    static string ToLowerString(string input)
+    //    {
+    //        var arr = input.ToCharArray();
+    //        for(int i=0; i<arr.Length; i++)
+    //        {
+    //            arr[i] = ToLowerChar(i);
+    //        }
+
+    //        char ToLowerChar(int i)
+    //        {
+    //            if (arr[i] < 65 || arr[i] > 90)
+    //                return arr[i];
+    //            else
+    //                return (char)(arr[i] + 32);
+    //        }
+
+    //        return new string(arr);
+    //    }
+
+    //    static void Main(string[] args)
+    //    {
+    //        Console.WriteLine(ToLowerString("Hello!"));
+    //        Console.WriteLine(ToLowerString("Good Morning."));
+    //        Console.WriteLine(ToLowerString("This is C#."));
+    //    }
+    //}
+
+    //문제 1
+    //class MainApp
+    //{
+    //    static double Square(double arg)
+    //    {
+    //        return arg * arg;
+    //    }
+
+    //    static void Main(string[] args)
+    //    {
+    //        Console.Write("수를 입력하세요 :");
+    //        string input = Console.ReadLine();
+    //        double arg = Convert.ToDouble(input);
+
+    //        Console.WriteLine("결과 : {0}", Square(arg));
+    //    }
+    //}
+
+    //문제 2
+    //class MainApp
+    //{
+
+    //    public static void Main()
+    //    {
+    //        double mean = 0;
+
+    //        mean = Mean(1, 2, 3, 4, 5, mean);
+
+    //        Console.WriteLine("평균 : {0}", mean);
+    //    }
+
+    //    public static double Mean(
+    //        double a, double b, double c, double d, double e, double mean)
+    //    {
+    //        return (a + b + c + d + e) / 5;
+    //    }
+
+    //}
+
+    //문제 3
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        int a = 3;
+    //        int b = 4;
+    //        int resultA = 0;
+
+    //        Plus(a, b, out resultA);
+
+    //        Console.WriteLine("{0} + {1} = {2}", a, b, resultA);
+
+    //        double x = 2.4;
+    //        double y = 3.1;
+    //        double resultB = 0;
+
+    //        //Plus(x, y, out resultB);
+
+    //        Console.WriteLine("{0} + {1} = {2}", x, y, resultB);
+    //    }
+
+    //    public static void Plus(int a, int b, out int c)
+    //    {
+    //        c = a + b;
+    //    }
+
+    //    public static void Plus(double a, double b, double c)
+    //    {
+    //        c = a + b;
+    //    }
+    //}
+
+
+    //클래스 구현
+    //class Cat
+    //{
+    //    public string Name;
+    //    public string Color;
+
+    //    public void Meow()
+    //    {
+    //        Console.WriteLine($"{Name} : 야옹");
+    //    }
+    //}
+
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        Cat kitty = new Cat();
+    //        kitty.Color = "하얀색";
+    //        kitty.Name = "키티";
+    //        kitty.Meow();
+    //        Console.WriteLine($"{kitty.Name} : {kitty.Color}");
+
+    //        //Cat nero = new Cat();
+    //        //nero.Color = "검은색";
+    //        //nero.Name = "네로";
+    //        //nero.Meow();
+    //        //Console.WriteLine($"{nero.Name} : {nero.Color}");
+    //    }
+    //}
+
+    //생성자와 종료자
+    //class Cat
+    //{
+    //    public Cat()
+    //    {
+    //        Name = "";
+    //        Color = "";
+
+    //    }
+
+    //    public Cat(string _Name, string _Color)
+    //    {
+    //        Name = _Name;
+    //        Color = _Color;
+    //    }
+
+    //    ~Cat()
+    //    {
+    //        Console.WriteLine($"{Name}:잘가");
+    //    }
+
+    //    public string Name;
+    //    public string Color;
+
+    //    public void Meow()
+    //    {
+    //        Console.WriteLine($"{Name} : 야옹");
+    //    }
+    //}
+
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        Cat kitty = new Cat("키티", "하얀색");
+    //        kitty.Meow();
+    //        Console.WriteLine($"{kitty.Name} : {kitty.Color}");
+
+    //        Cat nero = new Cat("네로", "검은색");
+    //        nero.Meow();
+    //        Console.WriteLine($"{nero.Name} : {nero.Color}");
+    //    }
+    //}
+
+
+    //정적 필드와 메소
+    //class Global
+    //{
+    //    public static int Count = 0;
+    //}
+
+    //class ClassA
+    //{
+    //    public ClassA()
+    //    {
+    //        Global.Count++;
+
+    //    }
+    //}
+
+    //class ClassB
+    //{
+    //    public ClassB()
+    //    {
+    //        Global.Count++;
+    //    }
+    //}
+
+
+    //class MainApp
+    //{
+    //    static void Main()
+    //    {
+    //        Console.WriteLine($"Global.Count : {Global.Count}");
+
+    //        new ClassA();
+    //        new ClassA();
+    //        new ClassB();
+    //        new ClassB();
+
+    //        Console.WriteLine($"Global.Count : {Global.Count}");
+    //    }
+    //}
+
+    //객체 복사하기
+    //class MyClass
+    //{
+    //    public int MyField1;
+    //    public int MyField2;
+
+
+    //    public MyClass DeepCopy()
+    //    {
+    //        MyClass newCopy = new MyClass();
+    //        newCopy.MyField1 = this.MyField1;
+    //        newCopy.MyField2 = this.MyField2;
+
+    //        return newCopy;
+    //    }
+
+    //}
+
+    //struct MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        Console.WriteLine("Shallow Copy");
+    //        {
+    //            MyClass source = new MyClass();
+    //            source.MyField1 = 10;
+    //            source.MyField2 = 20;
+
+    //            MyClass target = source;
+    //            target.MyField2 = 30;
+
+    //            Console.WriteLine("{0} {1}", source.MyField1, source.MyField2);
+    //            Console.WriteLine("{0} {1}", target.MyField1, target.MyField2);
+    //        }
+
+    //        Console.WriteLine("Deep Copy");
+    //        {
+    //            MyClass source = new MyClass();
+    //            source.MyField1 = 10;
+    //            source.MyField2 = 20;
+
+    //            MyClass target = source.DeepCopy();
+    //            target.MyField2 = 30;
+
+    //            Console.WriteLine($"{source.MyField1} {source.MyField2}");
+    //            Console.WriteLine($"{target.MyField1} {target.MyField2}");
+    //        }
+    //    }
+
+    //}
+
+    //상속과 베이스
+    //class Base
+    //{
+    //    protected string Name;
+    //    public Base(string Name)
+    //    {
+    //        this.Name = Name;
+    //        Console.WriteLine($"{this.Name}.Base()");
+    //    }
+
+    //    ~Base()
+    //    {
+    //            Console.WriteLine($"{this.Name}.~Base()");
+    //    }
+
+    //    public void BaseMethod()
+    //    {
+    //        Console.WriteLine($"{Name}.BaseMethod()");
+    //    }
+    //}
+
+    //class Derived : Base
+    //{
+    //    public Derived(string Name) : base(Name)
+    //    {
+    //        Console.WriteLine($"{this.Name}.Derived()");
+    //    }
+
+    //    ~Derived()
+    //    {
+    //        Console.WriteLine($"{this.Name}.Derived()");
+    //    }
+
+    //    public void DerivedMethod()
+    //    {
+    //        Console.WriteLine($"{Name}.DerivedMethod()");
+    //    }
+    //}
+
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        Base a = new Base("a");
+    //        a.BaseMethod();
+
+    //        Derived b = new Derived("b");
+    //        b.BaseMethod();
+    //        b.DerivedMethod();
+    //    }
+    //}
+
+    // 기반 클래스와 파생 클래스 사이의 형식 변환, 그리고 is as
+    class Mammal
     {
-        static int Sum(params int[] args)
+        public void Nurse()
         {
-            Console.Write("Summing...");
-
-            int sum = 0;
-
-            for(int i=0; i<args.Length; i++)
-            {
-                if (i > 0)
-                    Console.Write(",");
-
-                Console.Write(args[i]);
-
-                sum += args[i];
-            }
-
-            Console.WriteLine();
-
-            return sum;
-        }
-
-        static void Main(string[] args)
-        {
-            int sum = Sum(3, 4, 5, 6, 7, 8, 9, 10);
-
-            Console.WriteLine($"Sum : {sum}");
+            Console.WriteLine("Nurse()");
         }
     }
 
+    class Dog : Mammal
+    {
+        public void Bark()
+        {
+            Console.WriteLine("Bark()");
+        }
+    }
 
+    class Cat : Mammal
+    {
+        public void Meow()
+        {
+            Console.WriteLine("Meow()");
+        }
+    }
+
+    class MainApp
+    {
+        static void Main(string[] args)
+        {
+            Mammal mammal = new Dog();
+            Dog dog;
+
+            if(mammal is Dog)
+            {
+                dog = (Dog)mammal;
+                dog.Bark();
+            }
+
+            Mammal mammal2 = new Cat();
+
+            Cat cat = mammal2 as Cat;
+            if (cat != null)
+                cat.Meow();
+
+            Cat cat2 = mammal as Cat;
+            if (cat2 != null)
+                cat2.Meow();
+            else
+                Console.WriteLine("cat2 is not a Cat");
+        }
+    }
 }
