@@ -580,4 +580,72 @@ namespace MethodPractice
     //        warmachine.Initialize();
     //    }
     //}
+
+    //메소드 숨기기
+    //class Base
+    //{
+    //    public void MyMethod()
+    //    {
+    //        Console.WriteLine("Base.MyMethod()");
+    //    }
+    //}
+
+    //class Derived : Base
+    //{
+    //    public new void MyMethod()
+    //    {
+    //        Console.WriteLine("Derived.MyMethod()");
+    //    }
+    //}
+
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        Base baseObj = new Base();
+    //        baseObj.MyMethod();
+
+    //        Derived derivedObj = new Derived();
+    //        derivedObj.MyMethod();
+
+    //        Base baseOrDerived = new Derived();
+    //        baseOrDerived.MyMethod();
+    //    }
+    //}
+
+    //오버라이딩 봉인하기
+    class Base
+    {
+
+        public virtual void SealMe()
+        {
+
+        }
+    }
+
+    class Derived : Base
+    {
+        public sealed override void SealMe()
+        {
+
+        }
+    }
+
+    class WantToOverride : Derived
+    {
+        public override void SealMe()
+        {
+
+        }
+    }
+
+    class MainApp
+    {
+
+        static void Main(string[] args)
+        {
+
+        }
+    }
+
 }
