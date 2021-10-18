@@ -723,6 +723,8 @@ namespace MethodPractice
     //}
 
     //14. 분할 클래스
+    //15. 확장 메소드
     
 
+    
 }
