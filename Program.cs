@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 namespace MethodPractice
 {
@@ -724,7 +723,114 @@ namespace MethodPractice
 
     //14. 분할 클래스
     //15. 확장 메소드
-    
 
-    
+    //16. 인터페이스의 선언
+
+
+    //interface ILogger
+    //{
+    //    void WriteLog(string message);
+    //}
+
+    //class ConsoleLogger : ILogger
+    //{
+    //    public void WriteLog(string message)
+    //    {
+    //        Console.WriteLine(
+    //            "{0} {1}",
+    //            DateTime.Now.ToLocalTime(), message);
+
+    //    }
+    //}
+
+    //class FileLogger : ILogger
+    //{
+    //    private StreamWriter writer;
+
+    //    public FileLogger(string path)
+    //    {
+    //        writer = File.CreateText(path);
+    //        writer.AutoFlush = true;
+    //    }
+
+    //    public void WriteLog(string message)
+    //    {
+    //        writer.WriteLine("{0} {1}", DateTime.Now.ToShortTimeString(), message);
+    //    }
+    //}
+
+    //class ClimateMonitor
+    //{
+    //    private ILogger logger;
+    //    public ClimateMonitor(ILogger logger)
+    //    {
+    //        this.logger = logger;
+    //    }
+
+    //    public void start()
+    //    {
+    //        while (true)
+    //        {
+    //            Console.Write("온도를 입력해주세요 : ");
+    //            string temperature = Console.ReadLine();
+    //            if (temperature == "")
+    //                break;
+
+    //            logger.WriteLog("현재 온도 : " + temperature);
+    //        }
+
+    //    }
+
+    //}
+
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        ClimateMonitor monitor = new ClimateMonitor(
+    //            new FileLogger("MyLog.txt"));
+
+    //        monitor.start();
+    //    }
+    //}
+
+
+    //17. 인터페이스 자식, 부모
+    //interface ILogger
+    //{
+    //    void WriteLog(string message);
+    //}
+
+    //interface IFormattableLogger : ILogger
+    //{
+    //    void Wr.iteLog(string format, params Object[] args);
+    //}
+
+    //class ConsoleLogger2 : IFormattableLogger
+    //{
+    //    public void WriteLog(string message)
+    //    {
+    //        Console.WriteLine("{0} {1}",
+    //            DateTime.Now.ToLocalTime(), message);
+    //    }
+
+    //    public void WriteLog(string format, params Object[] args)
+    //    {
+    //        String message = String.Format(format, args);
+    //        Console.WriteLine("{0} {1}",
+    //            DateTime.Now.ToLocalTime(), message);
+    //    }
+    //}
+
+   
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        IFormattableLogger logger = new ConsoleLogger2();
+    //        logger.WriteLog("The world is not flat");
+    //        logger.WriteLog("{0} + {1} = {2}", 1, 1, 2);
+    //    }
+    //}
+
 }
