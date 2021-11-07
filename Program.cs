@@ -822,7 +822,7 @@ namespace MethodPractice
     //    }
     //}
 
-   
+
     //class MainApp
     //{
     //    static void Main(string[] args)
@@ -832,5 +832,142 @@ namespace MethodPractice
     //        logger.WriteLog("{0} + {1} = {2}", 1, 1, 2);
     //    }
     //}
+
+
+    // 18. 프로퍼티
+
+
+    //class BirthdayInfo
+    //{
+    //    private string name;
+    //    private DateTime birthday;
+
+    //    public string Name
+    //    {
+    //        get
+    //        {
+    //            return name;
+    //        }
+    //        set
+    //        {
+    //            name = value;
+    //        }
+
+    //    }
+
+    //    public DateTime Birthday
+    //    {
+    //        get
+    //        {
+    //            return birthday;
+    //        }
+    //        set
+    //        {
+    //            birthday = value;
+    //        }
+    //    }
+
+    //    public int Age
+    //    {
+    //        get
+    //        {
+    //            return new DateTime(DateTime.Now.Subtract(birthday).Ticks).Year;
+    //        }
+    //    }
+    //}
+
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        BirthdayInfo birth = new BirthdayInfo();
+    //        birth.Name = "서현";
+    //        birth.Birthday = new DateTime(1991, 6, 28);
+
+    //        Console.WriteLine($"Name : {birth.Name}");
+    //        Console.WriteLine($"Birthday : {birth.Birthday.ToShortDateString()}");
+    //        Console.WriteLine($"Age : {birth.Age}");
+
+    //    }
+    //}
+
+
+    //19 . 자동 구현 프로퍼티
+    //
+
+    //class BirthdayInfo
+    //{
+    //    public string Name { get; set; } = "Unkown";
+    //    public DateTime Birthday { get; set; } = new DateTime(1, 1, 1);
+    //    public int Age
+    //    {
+    //        get
+    //        {
+    //            return new DateTime(DateTime.Now.Subtract(Birthday).Ticks).Year;
+    //        }
+    //    }
+
+    //}
+
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        BirthdayInfo birth = new BirthdayInfo();
+    //        Console.WriteLine($"Name : {birth.Name}");
+    //        Console.WriteLine($"Birthday : {birth.Birthday.ToShortDateString()}");
+    //        Console.WriteLine($"Age : {birth.Age}");
+
+    //        birth.Name = "서현";
+    //        birth.Birthday = new DateTime(1991, 6, 28);
+
+    //        Console.WriteLine($"Name : {birth.Name}");
+    //        Console.WriteLine($"Birthday : {birth.Birthday.ToShortDateString()}");
+    //        Console.WriteLine($"Age : {birth.Age}");
+    //    }
+    //}
+
+    //20. 프로퍼티 생성자
+
+    //class BirthdayInfo
+    //{
+    //    public string Name
+    //    {
+    //        get;
+    //        set;
+    //    }
+
+    //    public DateTime Birthday
+    //    {
+    //        get;
+    //        set;
+    //    }
+
+    //    public int Age
+    //    {
+    //        get
+    //        {
+    //            return new DateTime(DateTime.Now.Subtract(Birthday).Ticks).Year;
+    //        }
+    //    }
+    //}
+
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        BirthdayInfo birth = new BirthdayInfo()
+    //        {
+    //            Name = "서현",
+    //            Birthday = new DateTime(1991, 6, 28)
+    //        };
+
+    //        Console.WriteLine($"Name : {birth.Name}");
+    //        Console.WriteLine($"Birthday : {birth.Birthday.ToShortDateString()}");
+    //        Console.WriteLine($"Age : {birth.Age}");
+    //    }
+    //}
+
+
 
 }
