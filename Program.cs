@@ -985,8 +985,9 @@ namespace MethodPractice
     //            Console.WriteLine(score);
 
     //        int sum = 0;
+
     //        foreach (int score in scores)
-    //            sum += score;
+    //            sum = sum + score;
 
     //        int average = sum / scores.Length;
 
@@ -994,6 +995,79 @@ namespace MethodPractice
 
     //    }
     //}
+
+    //22. 배열 초기화
+    //class MainApp
+    //{
+    //    static void Main(string[] args)
+    //    {
+    //        string[] array1 = new string[3] { "안녕", "Hello", "Halo" };
+
+    //        Console.WriteLine("array1...");
+    //        foreach (string greeting in array1)
+    //            Console.WriteLine($" {greeting}");
+
+    //        string[] array2 = new string[] { "안녕", "Hello", "Halo" };
+
+    //        Console.WriteLine("\narray2...");
+    //        foreach (string greeting in array2)
+    //            Console.WriteLine($" {greeting}");
+
+    //        string[] array3 = { "안녕", "Hello", "Halo" };
+
+    //        Console.WriteLine("\narray3...");
+    //        foreach (string greeting in array3)
+    //            Console.WriteLine($" {greeting}");
+    //    }
+    //}
+
+    //23. 2차원 배열
+    class MainApp
+    {
+        static void Main(string[] args)
+        {
+            int[,] arr = new int[2, 3] { { 1, 2, 3, }, { 4, 5, 6 } };
+            for (int i = 0; i < arr.GetLength(0); i++)
+            {
+                for(int j = 0; j < arr.GetLength(1); j++)
+                {
+                    Console.Write($"{i}, {j} : {arr[i, j]} ");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+            int[,] arr2 = new int[,] { { 1, 2, 3, }, { 4, 5, 6, } };
+
+            for(int i = 0; i < arr2.GetLength(0); i++)
+            {
+                for (int j =0; j < arr2.GetLength(1); j++)
+                {
+                    Console.WriteLine($"[{i}, {j} : {arr2[i, j]}]");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+
+            int[,] arr3 = { { 1, 2, 3, }, { 4, 5, 6 } };
+
+            for (int i = 0; i < arr3.GetLength(0); i++)
+            {
+                for(int j = 0; j < arr3.GetLength(1); j++)
+                {
+                    Console.Write($"[{i}, {j}] : {arr3[i, j]}");
+
+                }
+                Console.WriteLine();
+
+            }
+            Console.WriteLine();
+
+        }
+
+
+
+    }
 
 
 }
